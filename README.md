@@ -1,4 +1,4 @@
-## Start jupyter noteebook
+## Start project
 
 ```
 docker-compose up

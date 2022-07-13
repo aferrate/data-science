@@ -1,9 +1,11 @@
-version: "3"
+version: "3.8"
 services:
-  datascience-notebook:
-    image: jupyter/datascience-notebook
+  app:
+    build: .
     volumes:
-      - ./code:/home/jovyan/work
+      - .:/django
     ports:
-      - 8888:8888
-    container_name: datascience-notebook-container
+      - 8000:8000
+    image: app:django
+    container_name: django_container
+    command: python manage.py runserver 0.0.0.0:8000
